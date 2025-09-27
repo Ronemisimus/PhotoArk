@@ -1,0 +1,19 @@
+# Node.js
+node_modules
+.env
+npm-debug.log
+yarn-error.log
+
+# Python
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Docker
+.dockerignore
+
+# Operating System
+.DS_Store
+Thumbs.db
