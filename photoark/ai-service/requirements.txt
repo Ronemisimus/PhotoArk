@@ -1,0 +1,17 @@
+# Web framework for the service
+fastapi==0.103.1
+uvicorn[standard]==0.23.2
+
+# AI and Image Processing
+sentence-transformers==2.2.2
+torch==2.0.1
+torchvision==0.15.2
+Pillow==10.0.0
+
+# For downloading files
+requests==2.31.0
+
+# --- Development & Testing ---
+pytest==7.4.2
+httpx==0.25.0
+ruff==0.1.6 # Linter and formatter

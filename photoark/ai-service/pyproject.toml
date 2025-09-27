@@ -1,0 +1,13 @@
+[tool.ruff]
+# Enable Pyflakes `E` and `F` codes, and isort `I` for import sorting.
+select = ["E", "F", "I"]
+ignore = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Use double quotes for strings.
+quote-style = "double"
+# Use a line length of 88, which is the default for Black.
+line-length = 88
