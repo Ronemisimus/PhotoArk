@@ -1,17 +1,9 @@
 from fastapi import FastAPI
-from datetime import datetime
+from .routes import health
 
 app = FastAPI(title="PhotoArk AI Service")
 
-@app.get("/health", tags=["Monitoring"])
-def get_health():
-    """
-    Health check endpoint to verify the service is running.
-    """
-    return {
-        "status": "ok",
-        "timestamp": datetime.utcnow().isoformat()
-    }
+app.include_router(health.router)
 
 # Placeholder for the main functionality
 # @app.post("/generate-embedding")
