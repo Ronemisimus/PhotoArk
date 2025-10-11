@@ -1,6 +1,10 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import fastifyEnv from '@fastify/env';
+import swagger from '@fastify/swagger';
+import swaggerUi from '@fastify/swagger-ui';
 import healthRoutes from './routes/health.js';
+import photoRoutes from './routes/photos.js';
+import { swaggerOptions, swaggerUiOptions } from './swagger.js';
 
 // Initialize Fastify
 const fastify: FastifyInstance = Fastify({
@@ -25,8 +29,13 @@ await fastify.register(fastifyEnv, {
   dotenv: true,
 });
 
+// Register Swagger
+await fastify.register(swagger, swaggerOptions);
+await fastify.register(swaggerUi, swaggerUiOptions);
+
 // Register routes
 fastify.register(healthRoutes);
+fastify.register(photoRoutes);
 
 // Export the fastify instance for testing
 export default fastify;
