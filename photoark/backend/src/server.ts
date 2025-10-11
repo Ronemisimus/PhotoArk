@@ -2,9 +2,9 @@ import Fastify, { FastifyInstance } from 'fastify';
 import fastifyEnv from '@fastify/env';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
-import healthRoutes from './routes/health.js';
-import photoRoutes from './routes/photos.js';
-import { swaggerOptions, swaggerUiOptions } from './swagger.js';
+import healthRoutes from './routes/health';
+import photoRoutes from './routes/photos';
+import { swaggerOptions, swaggerUiOptions } from './swagger';
 
 // Initialize Fastify
 const fastify: FastifyInstance = Fastify({
