@@ -11,6 +11,7 @@ export default async function photoRoutes(fastify: FastifyInstance, options: obj
     properties: {
       id: { type: 'string' },
       url: { type: 'string', format: 'uri' },
+      thumbnailUrl: { type: 'string', format: 'uri' },
       title: { type: 'string' },
       description: { type: 'string' },
       createdAt: { type: 'string', format: 'date-time' },
@@ -36,6 +37,7 @@ export default async function photoRoutes(fastify: FastifyInstance, options: obj
     reply.code(201).send({
       id: '123',
       url: 'http://example.com/photo.jpg',
+      thumbnailUrl: 'http://example.com/thumbnail.jpg',
       title: (request.body as any).title,
       description: (request.body as any).description,
       createdAt: new Date().toISOString(),
@@ -60,6 +62,7 @@ export default async function photoRoutes(fastify: FastifyInstance, options: obj
     reply.send({
       id: params.id,
       url: 'http://example.com/photo.jpg',
+      thumbnailUrl: 'http://example.com/thumbnail.jpg',
       title: 'A beautiful photo',
       description: 'This is a description of the photo.',
       createdAt: new Date().toISOString(),
