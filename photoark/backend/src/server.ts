@@ -2,8 +2,8 @@ import Fastify, { FastifyInstance } from 'fastify';
 import fastifyEnv from '@fastify/env';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
-import healthRoutes from './routes/health';
-import photoRoutes from './routes/photos';
+import healthRoutes from './routes/health.js';
+import mediaRoutes from './routes/media.js';
 import { swaggerOptions, swaggerUiOptions } from './swagger';
 
 // Initialize Fastify
@@ -35,7 +35,7 @@ await fastify.register(swaggerUi, swaggerUiOptions);
 
 // Register routes
 fastify.register(healthRoutes);
-fastify.register(photoRoutes);
+fastify.register(mediaRoutes);
 
 // Export the fastify instance for testing
 export default fastify;
